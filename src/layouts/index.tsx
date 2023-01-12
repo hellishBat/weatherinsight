@@ -1,14 +1,13 @@
 // Layout
-import { FC } from 'react'
-import { ChildrenTypes } from '@/types'
 import Header from '@/modules/Header'
 import Footer from '@/modules/Footer'
+import type { ChildrenProps } from '@/types'
 
-const Layout: FC<ChildrenTypes> = ({ children }) => {
+const Layout = ({ children }: ChildrenProps) => {
   return (
     <>
       <Header />
-      <main className="bg-gradient-to-bl from-rose-400 via-fuchsia-500 to-indigo-500 text-white">
+      <main className="bg-slate-100 font-raleway text-slate-700 dark:bg-gray-900 dark:text-white">
         {children}
       </main>
       <Footer />

@@ -1,33 +1,24 @@
 // Header
-import { useEffect, useState, useRef } from 'react'
+import { useScrollDirection } from '@/hooks'
 import { Container } from '@/components'
+import { Logo, ThemeSwitch } from './components'
+import { styles } from '@/styles'
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const headerRef = useRef(null)
-
-  const handleScroll = () => {
-    const offsetY = window.scrollY
-    if (offsetY >= 80) {
-      setIsScrolled(true)
-    } else {
-      setIsScrolled(false)
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', () => handleScroll)
-    }
-  }, [])
+  const scrollDirection = useScrollDirection()
 
   return (
-    <header className={`py-4 ${isScrolled ? 'shadow-md transition-colors' : ''}`} ref={headerRef}>
+    <header
+      className={`fixed top-0 left-0 z-50 w-full py-4 ${
+        styles.layout
+      } shadow-md transition-[transform,opacity] duration-500 ${
+        scrollDirection === 'down' ? '-translate-y-full opacity-5' : 'translate-y-0 opacity-100'
+      }`}
+    >
       <Container>
-        <div className="header__inner">
-          <a href="#">Link</a>
+        <div className="flex items-center">
+          <Logo />
+          <ThemeSwitch />
         </div>
       </Container>
     </header>

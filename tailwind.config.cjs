@@ -8,7 +8,6 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
-      // '2xl': '1536px'
     },
     container: {
       center: true,
@@ -17,11 +16,8 @@ module.exports = {
       },
     },
     extend: {
-      colors: {
-        // custom colors
-      },
       fontFamily: {
-        // custom fonts
+        raleway: ['Raleway', 'sans-serif'],
       },
     },
   },

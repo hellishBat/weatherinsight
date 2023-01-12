@@ -1,9 +1,23 @@
 // ContextProviders
-import { FC } from 'react'
-import { ChildrenTypes } from '@/types'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ThemeProvider } from './ThemeContext'
+import type { ChildrenProps } from '@/types'
 
-const ContextProviders: FC<ChildrenTypes> = ({ children }) => {
-  return <>{children}</>
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: false,
+    },
+  },
+})
+
+const ContextProviders = ({ children }: ChildrenProps) => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>{children}</ThemeProvider>
+    </QueryClientProvider>
+  )
 }
 
 export default ContextProviders

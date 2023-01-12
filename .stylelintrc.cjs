@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['stylelint-config-standard'],
+  extends: ['stylelint-config-recommended', 'stylelint-config-tailwindcss'],
   rules: {
     'at-rule-no-unknown': [
       true,
@@ -7,10 +7,9 @@ module.exports = {
         ignoreAtRules: ['tailwind', 'apply', 'variants', 'responsive', 'screen'],
       },
     ],
-    'declaration-block-trailing-semicolon': null,
-    'no-descending-specificity': null,
     'string-quotes': 'single',
     'font-family-name-quotes': 'always-unless-keyword',
-    // 'value-keyword-case': ['lower', { camelCaseSvgKeywords: true }],
+    'declaration-block-trailing-semicolon': null,
+    'no-descending-specificity': null,
   },
 }
