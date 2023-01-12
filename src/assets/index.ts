@@ -13,6 +13,7 @@ import { ReactComponent as WeekIcon } from '@/assets/svg/week.svg'
 import { ReactComponent as SunriseIcon } from '@/assets/svg/sunrise.svg'
 import { ReactComponent as SunsetIcon } from '@/assets/svg/sunset.svg'
 import { ReactComponent as HeartIcon } from '@/assets/svg/heart.svg'
+import { ReactComponent as SwipeXIcon } from '@/assets/svg/swipe-x.svg'
 
 export {
   ProjectLogo,
@@ -29,4 +30,5 @@ export {
   SunriseIcon,
   SunsetIcon,
   HeartIcon,
+  SwipeXIcon,
 }

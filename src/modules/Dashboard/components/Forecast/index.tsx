@@ -7,7 +7,7 @@ import 'swiper/scss/free-mode'
 import 'swiper/scss/keyboard'
 import { ForecastCard } from '../'
 import { styles } from '@/styles'
-import { TodayIcon, WeekIcon } from '@/assets'
+import { TodayIcon, WeekIcon, SwipeXIcon } from '@/assets'
 import data from '@/data/index.json'
 import type { ForecastProps } from '@/types'
 
@@ -28,7 +28,7 @@ export const Forecast = ({ data }: ForecastProps) => {
 
   return (
     <section>
-      <div className="flex gap-4 dark:border-gray-700">
+      <div className="flex items-center gap-4 dark:border-gray-700">
         <button
           className={`${isWeekMode ? `${styles.tabBtn.inactive}` : `${styles.tabBtn.active}`} ${
             styles.tabBtn.common
@@ -49,8 +49,11 @@ export const Forecast = ({ data }: ForecastProps) => {
           <WeekIcon />
           <span>{forecastData.buttons[1]}</span>
         </button>
+        <SwipeXIcon className="ml-auto text-2xl text-gray-400" />
       </div>
+
       <div className="mb-4 h-[3px] bg-gray-200 shadow-inner dark:bg-gray-700 sm:mb-6"></div>
+
       <Swiper
         className="-my-2"
         slidesPerView={2}
