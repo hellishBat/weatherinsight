@@ -1,7 +1,6 @@
 // Container
-import { FC } from 'react'
-import { ChildrenTypes } from '@/types'
+import { ChildrenProps } from '@/types'
 
-export const Container: FC<ChildrenTypes> = ({ children }) => {
+export const Container = ({ children }: ChildrenProps) => {
   return <div className="container">{children}</div>
 }

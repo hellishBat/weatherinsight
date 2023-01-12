@@ -1,8 +1,7 @@
 // Link
-import { FC } from 'react'
-import type { LinkTypes } from '@/types'
+import type { LinkProps } from '@/types'
 
-export const Link: FC<LinkTypes> = ({ href, children }) => {
+export const Link = ({ href, children }: LinkProps) => {
   return (
     <a className="font-semibold hover:underline hover:transition-all" href={href}>
       {children}
