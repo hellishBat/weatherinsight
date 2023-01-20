@@ -5,7 +5,7 @@ const styles = {
     common: 'p-2 rounded-md border-none hover:transition-colors',
     filled:
       'bg-gradient-to-br from-slate-600 to-slate-700 text-white shadow md:hover:shadow-sm md:hover:from-slate-500 md:hover:to-slate-600',
-    icon: 'md:hover:bg-slate-900/5 dark:md:hover:bg-white/5',
+    icon: 'md:hover:bg-slate-900/10 dark:md:hover:bg-white/10',
   },
   tabBtn: {
     common:

@@ -1,50 +1,54 @@
 // Dashboard
+import { useState } from 'react'
 import { useIsFetching, useQuery } from 'react-query'
 import { Container } from '@/components'
-import { SearchForm, Weather } from './components'
-import { useFormQuery } from '@/hooks'
-import { fetchImage, fetchLocationData, fetchWeatherByWord } from '@/api/fetchers'
+import { LocationButton, SearchBar, Search, Weather } from './components'
+import { fetchLocationData, fetchWeatherByQuery, fetchImage } from '@/api/fetchers'
 
 const Dashboard = () => {
-  const { handleSubmit, setQuery, query } = useFormQuery()
+  const [query, setQuery] = useState('')
 
-  const { refetch } = useQuery(['location-data'], () => fetchLocationData(), {
+  const { refetch } = useQuery(['location-name'], () => fetchLocationData(), {
     onSuccess: setQuery,
   })
 
-  const { data: weather, isError } = useQuery(
-    ['weather-data', query],
-    () => fetchWeatherByWord(query),
-    {
-      enabled: !!query,
-    }
-  )
+  const { data: weather } = useQuery(['weather-data', query], () => fetchWeatherByQuery(query), {
+    enabled: !!query,
+  })
 
+  const cityName = weather?.name
   const weatherDescription = weather?.weather?.[0]?.description
 
   const { data: image } = useQuery(
-    ['bg-image', query, weatherDescription],
-    () => fetchImage(query, weatherDescription),
+    ['bg-image', cityName, weatherDescription],
+    () => fetchImage(cityName, weatherDescription),
     {
-      enabled: !!weatherDescription,
+      enabled: !!cityName,
     }
   )
 
   const isFetching = useIsFetching()
 
-  const handleClick = () => {
+  const handleLocationSearch = () => {
     refetch()
+  }
+
+  const handleOnSearchChange = (searchData: any) => {
+    setQuery(searchData?.value)
   }
 
   return (
     <section
       id="dashboard"
-      className="bg-cover bg-center bg-no-repeat dark:bg-gray-900"
+      className="bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${image})` }}
     >
       <div className="min-h-screen bg-slate-200/70 pt-36 pb-16 backdrop-blur-2xl dark:bg-gray-900/[.85]">
         <Container>
-          <SearchForm submitHandler={handleSubmit} clickHandler={handleClick} error={isError} />
+          <SearchBar>
+            <Search onSearchChange={handleOnSearchChange} />
+            <LocationButton clickHandler={handleLocationSearch} />
+          </SearchBar>
           <Weather weather={weather} image={image} isFetching={isFetching} />
         </Container>
       </div>

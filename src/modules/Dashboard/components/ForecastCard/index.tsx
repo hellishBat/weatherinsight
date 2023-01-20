@@ -15,7 +15,7 @@ export const ForecastCard = ({ data, isWeekMode, timezone }: ForecastProps) => {
           ? convertTime(data.dt, timezone, 'dayOfWeek')
           : convertTime(data.dt, timezone, '24Hours')}
       </h3>
-      <figure className="mb-3 h-24 w-24 rounded-full bg-slate-300 shadow-inner dark:bg-gray-800">
+      <figure className="mb-3 h-24 w-24 rounded-full bg-slate-300 shadow-inner dark:bg-slate-800">
         <img
           className=" object-contain"
           src={`https://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}@2x.png`}

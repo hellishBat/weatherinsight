@@ -1,5 +1,6 @@
 // Dashboard Components
-export { SearchForm } from './SearchForm'
+export { SearchBar } from './SearchBar'
+export { Search } from './Search'
 export { LocationButton } from './LocationButton'
 export { Weather } from './Weather'
 export { Highlights } from './Highlights'

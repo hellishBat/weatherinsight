@@ -1,34 +1,35 @@
 # WeatherInsight - A React Weather App
 
-![Imgur](https://i.imgur.com/cKxqUlO.png)
+![Imgur](https://i.imgur.com/DpZ9ngY.png)
 
 ## Features
 
-- Weather search by location and city name;
-- For the main weather card a background image is automatically applied with the photo found for the given location on unsplash.com (the image is selected randomly from the first 10 results for the given location);
+- Weather search by location: when the page load or by clicking on the location button;
+- Search the weather by city name: select a city from the autofill list, the list includes cities with a population over 250,000;
+- For the main weather card a background image is automatically applied with the photo found for the given location on unsplash.com (the image is selected randomly from the first 10 results for the given location if there are not enough results, search by weather description, e.g. sunny or cloudy);
 - Dark Mode Included.
 
 ## Technologies Used
 
 - React + TypeScript;
-- Styled with Tailwind CSS;
 - [React Query](https://www.npmjs.com/package/react-query) for asynchronous state management
 - [Axios](https://www.npmjs.com/package/axios) for fetching from API;
-- [Moment.js](https://www.npmjs.com/package/moment) to handle time formats;
+- Styled with [Tailwind CSS](https://www.npmjs.com/package/tailwindcss);
 - APIs:
   - [OpenWeather](https://openweathermap.org/)
   - [Unsplash](https://unsplash.com/developers/)
-  - [IPWhoIs](https://ipwhois.io/)
+  - [GeoDB Cities](https://rapidapi.com/wirefreethought/api/geodb-cities/)
+  - [IPWHOIS.io](https://ipwhois.io/)
 
 ## Credits (In order of appearance)
 
-- Libraries: [React Toggle Dark Mode](https://www.npmjs.com/package/react-toggle-dark-mode), [React Country Flag](https://www.npmjs.com/package/react-country-flag), [Swiper](https://www.npmjs.com/package/swiper)
+- Libraries: [React Toggle Dark Mode](https://www.npmjs.com/package/react-toggle-dark-mode), [React Select](https://www.npmjs.com/package/react-select), [React Select Async Paginate](https://www.npmjs.com/package/react-select-async-paginate), [Moment.js](https://www.npmjs.com/package/moment), [React Country Flag](https://www.npmjs.com/package/react-country-flag), [Swiper](https://www.npmjs.com/package/swiper)
 - Icons: [Material Icons](https://fonts.google.com/icons)
 - Ukrainian Heart icon by [Linector](https://www.iconfinder.com/LINECTOR)
 
 ## Live Demo
 
-[Live Demo](https://weather-insight.vercel.app/)
+[Live Demo](https://weatherinsight.vercel.app/)
 
 ## Local Usage (On your machine)
 
@@ -37,8 +38,9 @@
 - Clone this repo;
 - You need to get API keys from [Openweather](https://openweathermap.org/) and [Unsplash](https://unsplash.com/developers/);
 - Create .env file in the root folder with corresponding variables:
-  - VITE_API_KEY_APPID=your-api-key
-  - VITE_API_KEY_UNSPLASH=your-api-key
+  - `VITE_API_KEY_GEODB`=your-api-key
+  - `VITE_API_KEY_OPENWEATHER`=your-api-key
+  - `VITE_API_KEY_UNSPLASH`=your-api-key
 
 ## This website made with [Vite⚡ React TS Boilerplate (Tailwind CSS Edition)](https://github.com/valentine-samoylov/vite-react-ts-tw-bp)
 

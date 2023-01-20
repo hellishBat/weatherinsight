@@ -5,9 +5,8 @@ type ChildrenProps = {
   children: React.ReactNode | React.ReactNode[]
 }
 
-type SearchFormProps = LocationButtonProps & {
-  submitHandler: (e: React.FormEvent<HTMLFormElement>) => void
-  error?: boolean | unknown
+type SearchProps = {
+  onSearchChange: (fn: any) => void
 }
 
 type LocationButtonProps = {
@@ -37,7 +36,7 @@ type LinkProps = ChildrenProps & {
 
 export {
   ChildrenProps,
-  SearchFormProps,
+  SearchProps,
   LocationButtonProps,
   WeatherProps,
   HighlightsProps,
