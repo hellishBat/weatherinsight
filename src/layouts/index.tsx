@@ -7,7 +7,7 @@ const Layout = ({ children }: ChildrenProps) => {
   return (
     <>
       <Header />
-      <main className="bg-slate-100 font-raleway text-slate-700 dark:bg-gray-900 dark:text-white">
+      <main className="bg-slate-100 text-slate-700 dark:bg-gray-900 dark:text-white">
         {children}
       </main>
       <Footer />
