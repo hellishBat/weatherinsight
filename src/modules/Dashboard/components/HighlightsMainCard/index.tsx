@@ -1,13 +1,13 @@
-// MainHighlightsCard
+// HighlightsMainCard
 import { ReactCountryFlag } from 'react-country-flag'
 import { convertTime, convertRegionNames } from '@/utils'
 import { SunriseIcon, SunsetIcon } from '@/assets'
 import type { HighlightsProps } from '@/types'
 
-export const MainHighlightsCard = ({ data, img }: HighlightsProps) => {
+export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
   return (
     <article
-      className="overlay-30 flex aspect-square w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-6 capitalize text-white shadow-md md:w-1/2 lg:w-4/12 "
+      className="overlay-30 flex aspect-square w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-6 capitalize text-white shadow md:w-1/2 lg:w-4/12 "
       style={{ backgroundImage: `url(${img})` }}
     >
       <div className="flex flex-col gap-3 lg:gap-4">

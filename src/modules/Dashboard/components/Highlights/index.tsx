@@ -1,5 +1,5 @@
 // Highlights
-import { HighlightsCard, MainHighlightsCard } from '../'
+import { HighlightsCard, HighlightsMainCard } from '../'
 import { convertTime } from '@/utils'
 import { SunIcon, CloudIcon, WaterIcon, WindIcon, MeterIcon, VisibilityIcon } from '@/assets'
 import data from '@/data/index.json'
@@ -64,7 +64,7 @@ export const Highlights = ({ data, img }: HighlightsProps) => {
         </p>
       </div>
       <div className="flex flex-wrap gap-6 sm:gap-8 md:flex-nowrap">
-        <MainHighlightsCard data={data} img={img} />
+        <HighlightsMainCard data={data} img={img} />
         <div className="grid w-full auto-cols-fr auto-rows-fr gap-6 sm:grid-cols-2 sm:gap-8 lg:w-2/3 lg:grid-cols-3">
           {highlightsCardsData.map((highlightsCardData, idx) => (
             <HighlightsCard data={highlightsCardData} key={idx} />

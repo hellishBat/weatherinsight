@@ -13,7 +13,7 @@ const styles = {
     active: 'border-slate-700 text-slate-700 dark:border-white dark:text-white',
     inactive: 'text-gray-500 md:hover:border-gray-400 md:hover:text-gray-400',
   },
-  card: 'bg-gradient-to-br from-gray-100 to-gray-300 rounded-xl shadow-md dark:from-slate-700 dark:to-slate-800',
+  card: 'bg-gradient-to-br from-gray-100 to-gray-300 rounded-xl shadow dark:from-slate-700 dark:to-slate-800',
   cardLabel: {
     normal: 'text-xl font-semibold text-gray-500 uppercase dark:text-gray-400',
     sm: 'text-xs font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400',

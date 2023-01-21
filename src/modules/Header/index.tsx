@@ -11,7 +11,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 z-50 w-full py-4 ${
         styles.layout
-      } shadow-md transition-[transform,opacity] duration-500 ${
+      } shadow transition-[transform,opacity] duration-500 ${
         scrollDirection === 'down' ? '-translate-y-full opacity-5' : 'translate-y-0 opacity-100'
       }`}
     >
