@@ -1,6 +1,6 @@
 // Dashboard
 import { useState } from 'react'
-import { useIsFetching, useQuery } from 'react-query'
+import { useIsFetching, useQuery } from '@tanstack/react-query'
 import { Container } from '@/components'
 import { LocationButton, SearchBar, Search, Weather } from './components'
 import { fetchLocationData, fetchWeatherByQuery, fetchImage } from '@/api/fetchers'

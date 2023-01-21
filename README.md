@@ -12,7 +12,7 @@
 ## Technologies Used
 
 - React + TypeScript;
-- [React Query](https://www.npmjs.com/package/react-query) for asynchronous state management
+- [TanStack/React Query](https://www.npmjs.com/package/@tanstack/react-query) for asynchronous state management
 - [Axios](https://www.npmjs.com/package/axios) for fetching from API;
 - Styled with [Tailwind CSS](https://www.npmjs.com/package/tailwindcss);
 - APIs:

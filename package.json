@@ -50,13 +50,13 @@
     "vite-tsconfig-paths": "^4.0.3"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.22.3",
     "axios": "^0.27.2",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.35",
     "react": "^18.2.0",
     "react-country-flag": "^3.0.2",
     "react-dom": "^18.2.0",
-    "react-query": "^3.39.2",
     "react-select": "^5.7.0",
     "react-select-async-paginate": "^0.7.2",
     "react-toggle-dark-mode": "^1.1.0",
