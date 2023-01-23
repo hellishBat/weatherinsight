@@ -57,7 +57,7 @@ export const Highlights = ({ data, img }: HighlightsProps) => {
 
   return (
     <section className="mb-12">
-      <div className="mb-4 flex flex-wrap items-baseline text-gray-500 sm:mb-6">
+      <div className="mb-4 flex flex-wrap items-end text-gray-500 sm:mb-6">
         <h2 className="mr-auto text-3xl font-bold">{highlightsData.heading}</h2>
         <p className="text-xl font-semibold">
           {highlightsData.text} {convertTime(data?.dt, data?.timezone, 'fullDate')}

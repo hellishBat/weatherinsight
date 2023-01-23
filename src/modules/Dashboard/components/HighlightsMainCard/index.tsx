@@ -33,12 +33,12 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
           </li>
         </ul>
 
-        <ul className="flex items-center gap-1 text-lg font-semibold">
-          <li className="flex items-center gap-1 after:content-['•']">
+        <ul className="flex gap-1 text-lg font-semibold">
+          <li className="with-icon gap-1 after:content-['•']">
             <SunriseIcon />
             <span>{convertTime(data?.current?.sunrise, data?.timezone, '24Hours')}</span>
           </li>
-          <li className="flex items-center gap-1">
+          <li className="with-icon  gap-1">
             <SunsetIcon />
             <span>{convertTime(data?.current?.sunset, data?.timezone, '24Hours')}</span>
           </li>

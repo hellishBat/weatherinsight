@@ -17,6 +17,7 @@ type WeatherProps = {
   weather: any
   image: string
   isFetching: number
+  isError: boolean
 }
 
 type HighlightsProps = {

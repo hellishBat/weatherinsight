@@ -12,18 +12,23 @@ const Dashboard = () => {
     onSuccess: setQuery,
   })
 
-  const { data: weather } = useQuery(['weather-data', query], () => fetchWeatherByQuery(query), {
-    enabled: !!query,
-  })
+  const { data: weather, isError } = useQuery(
+    ['weather-data', query],
+    () => fetchWeatherByQuery(query),
+    {
+      enabled: !!query,
+    }
+  )
 
   const cityName = weather?.name
+  const imageQuery = cityName
   const weatherDescription = weather?.weather?.[0]?.description
 
   const { data: image } = useQuery(
-    ['bg-image', cityName, weatherDescription],
-    () => fetchImage(cityName, weatherDescription),
+    ['bg-image', imageQuery, weatherDescription],
+    () => fetchImage(imageQuery, weatherDescription),
     {
-      enabled: !!cityName,
+      enabled: !!imageQuery,
     }
   )
 
@@ -49,7 +54,7 @@ const Dashboard = () => {
             <Search onSearchChange={handleOnSearchChange} />
             <LocationButton clickHandler={handleLocationSearch} />
           </SearchBar>
-          <Weather weather={weather} image={image} isFetching={isFetching} />
+          <Weather weather={weather} image={image} isFetching={isFetching} isError={isError} />
         </Container>
       </div>
     </section>

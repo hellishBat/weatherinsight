@@ -1,5 +1,6 @@
 // Assets
 import { ReactComponent as ProjectLogo } from '@/assets/svg/logo.svg'
+import { ReactComponent as ErrorIcon } from '@/assets/svg/error.svg'
 import { ReactComponent as SearchIcon } from '@/assets/svg/search.svg'
 import { ReactComponent as LocationIcon } from '@/assets/svg/location.svg'
 import { ReactComponent as CloudIcon } from '@/assets/svg/cloud.svg'
@@ -17,6 +18,7 @@ import { ReactComponent as SwipeXIcon } from '@/assets/svg/swipe-x.svg'
 
 export {
   ProjectLogo,
+  ErrorIcon,
   SearchIcon,
   LocationIcon,
   SunIcon,

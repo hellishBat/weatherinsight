@@ -9,7 +9,7 @@ export const styles = {
   },
   tabBtn: {
     common:
-      'flex items-center gap-2 -mb-[3px] p-3 rounded-t-lg border-0 border-b-[3px] border-transparent text-2xl font-bold hover:transition-colors active:opacity-80',
+      'with-icon gap-2 -mb-[3px] p-3 rounded-t-lg border-0 border-b-[3px] border-transparent text-2xl font-bold hover:transition-colors active:opacity-80',
     active: 'border-slate-700 text-slate-700 dark:border-white dark:text-white',
     inactive: 'text-gray-500 md:hover:border-gray-400 md:hover:text-gray-400',
   },
