@@ -32,33 +32,33 @@ export const fetchCitiesOptions = (inputValue: string) => {
 }
 
 export const fetchLocationData = async () => {
-  const resLocationData = await axios.get(LOCATION_DATA_API)
+  const { data: resLocationData } = await axios.get(LOCATION_DATA_API)
 
-  const query = `${resLocationData?.data?.city},${resLocationData?.data?.country_code}`
+  const query = `${resLocationData?.city},${resLocationData?.country_code}`
 
   return query
 }
 
 export const fetchWeatherByQuery = async (query: string) => {
   if (query) {
-    const resWeather = await axios.get(`${GET_WEATHER_BY_QUERY}&q=${query}&units=metric`)
+    const { data: resWeather } = await axios.get(`${GET_WEATHER_BY_QUERY}&q=${query}&units=metric`)
 
     const weather = {
-      ...resWeather?.data,
-      city: resWeather?.data?.name,
-      country_code: resWeather?.data?.sys?.country,
-      country: resWeather?.data?.sys?.country,
+      ...resWeather,
+      city: resWeather?.name,
+      country_code: resWeather?.sys?.country,
+      country: resWeather?.sys?.country,
     }
 
-    const resWeatherNDH = await axios.get(
-      `${GET_WEATHER_NEXT_DAYS_HOURS}&lat=${resWeather.data.coord.lat}&lon=${resWeather.data.coord.lon}&units=metric`
+    const { data: resWeatherNDH } = await axios.get(
+      `${GET_WEATHER_NEXT_DAYS_HOURS}&lat=${resWeather.coord.lat}&lon=${resWeather.coord.lon}&units=metric`
     )
 
     const weatherNextDaysHours = {
       ...weather,
-      daily: resWeatherNDH?.data?.daily,
-      hourly: resWeatherNDH?.data?.hourly,
-      current: resWeatherNDH?.data?.current,
+      daily: resWeatherNDH?.daily,
+      hourly: resWeatherNDH?.hourly,
+      current: resWeatherNDH?.current,
     }
 
     return weatherNextDaysHours
@@ -66,15 +66,15 @@ export const fetchWeatherByQuery = async (query: string) => {
 }
 
 export const fetchImage = async (word: string, weatherDescription: string | any) => {
-  const res = await axios.get(`${GET_IMG_BY_WORD}${word}`)
+  const { data: imgResData } = await axios.get(`${GET_IMG_BY_WORD}${word}`)
 
-  if (res?.data.results.length === 0 || res?.data.results.length < 10) {
-    const res = await axios.get(`${GET_IMG_BY_WORD}nature ${weatherDescription}`)
-    const randomImage = res?.data.results[Math.floor(Math.random() * 10)]?.urls?.regular
+  if (imgResData.results.length === 0 || imgResData.results.length < 10) {
+    const { data: imgResData } = await axios.get(`${GET_IMG_BY_WORD}nature ${weatherDescription}`)
+    const randomImage = imgResData?.results[Math.floor(Math.random() * 10)]?.urls?.regular
 
     return randomImage
   } else {
-    const randomImage = res.data.results[Math.floor(Math.random() * 10)]?.urls?.regular
+    const randomImage = imgResData.results[Math.floor(Math.random() * 10)]?.urls?.regular
 
     return randomImage
   }
