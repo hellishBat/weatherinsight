@@ -1,5 +1,6 @@
 // ForecastCard
 import { styles } from '@/styles'
+import { WeatherIcon } from '../WeatherIcon'
 import { convertTime } from '@/utils'
 import type { ForecastProps } from '@/types'
 
@@ -15,13 +16,11 @@ export const ForecastCard = ({ data, isWeekMode, timezone }: ForecastProps) => {
           ? convertTime(data.dt, timezone, 'dayOfWeek')
           : convertTime(data.dt, timezone, '24Hours')}
       </h3>
-      <figure className="mb-3 h-24 w-24 rounded-full bg-slate-300 shadow-inner dark:bg-slate-800">
-        <img
-          className=" object-contain"
-          src={`https://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}@2x.png`}
-          alt={data?.weather?.[0]?.main}
-        ></img>
-      </figure>
+      <WeatherIcon
+        className="mb-3 flex h-24 w-24 items-center justify-center rounded-full bg-slate-300 shadow-inner dark:bg-slate-800"
+        icon={data?.weather?.[0]?.icon}
+        alt={data?.weather?.[0]?.main}
+      />
       <p className="flex w-full flex-col items-center px-4 text-2xl">
         {isWeekMode ? (
           <>

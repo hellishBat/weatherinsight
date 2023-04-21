@@ -1,3 +1,3 @@
 // Hooks
-export { useScrollDirection } from './useScrollDirection'
-export { useDarkTheme } from './useDarkTheme'
+export * from './useScrollDirection'
+export * from './useDarkTheme'

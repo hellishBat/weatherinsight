@@ -1,5 +1,6 @@
 // HighlightsMainCard
 import { ReactCountryFlag } from 'react-country-flag'
+import { WeatherIcon } from '../WeatherIcon'
 import { convertTime, convertRegionNames } from '@/utils'
 import { SunriseIcon, SunsetIcon } from '@/assets'
 import type { HighlightsProps } from '@/types'
@@ -12,11 +13,11 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
     >
       <div className="flex flex-col gap-3 lg:gap-4">
         <div className="flex items-baseline">
-          <img
-            className="h-12 w-12 object-contain"
-            src={`https://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}@2x.png`}
+          <WeatherIcon
+            className="h-12 w-12"
+            icon={data?.weather?.[0]?.icon}
             alt={data?.weather?.[0]?.main}
-          ></img>
+          />
           <span className="text-5xl font-thin">{`${data?.main?.temp.toFixed(0)}`}</span>
           <span className="text-lg">°C</span>
         </div>

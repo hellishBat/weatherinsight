@@ -20,6 +20,12 @@ type WeatherProps = {
   isError: boolean
 }
 
+type WeatherIconProps = {
+  icon: string
+  alt?: string
+  className?: string
+}
+
 type HighlightsProps = {
   data: any
   img?: string
@@ -40,6 +46,7 @@ export {
   SearchProps,
   LocationButtonProps,
   WeatherProps,
+  WeatherIconProps,
   HighlightsProps,
   ForecastProps,
   LinkProps,
